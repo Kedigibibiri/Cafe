@@ -54,7 +54,7 @@ public class Casier : MonoBehaviour
         if (customerHere)
         {
             customerHere = false;
-            yield return new WaitForSeconds(.9f);
+            yield return new WaitForSeconds(1f);
             filler = true;
         }
         if (filler)
@@ -71,13 +71,15 @@ public class Casier : MonoBehaviour
         if (!moneytaken)
         {
             moneytaken = true;
+            GetComponent<CustomerMover>().GiveMoney(true);
             Instantiate(money, moneyPlace.position, Quaternion.identity, moneyPlace);
-            yield return new WaitForSeconds(.3f);
+            yield return new WaitForSeconds(.25f);
+            GetComponent<CustomerMover>().GiveMoney(false);
             PlayerPrefs.SetInt("cash", PlayerPrefs.GetInt("cash") + PlayerPrefs.GetInt("coffeeprice"));
 
             Transform hand = other.gameObject.transform.GetChild(0);
             hand.gameObject.SetActive(true);
-            yield return new WaitForSeconds(.3f);
+            yield return new WaitForSeconds(.25f);
             other.GetComponent<CoffeTaken>().coffeTaken = true;
         }
     }

@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("cash", balance);
             PlayerPrefs.SetInt("prices1", PlayerPrefs.GetInt("prices1") + PlayerPrefs.GetInt("prices1"));
 
-            PlayerPrefs.SetFloat("casierspeed", PlayerPrefs.GetFloat("casierspeed") + .01f);
+            PlayerPrefs.SetFloat("casierspeed", PlayerPrefs.GetFloat("casierspeed") + .025f);
         }
     }
 
@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("cash", balance);
             PlayerPrefs.SetInt("prices2", PlayerPrefs.GetInt("prices2") + PlayerPrefs.GetInt("prices2"));
 
-            PlayerPrefs.SetFloat("speed", PlayerPrefs.GetFloat("speed") + .05f); 
+            PlayerPrefs.SetFloat("speed", PlayerPrefs.GetFloat("speed") + .5f); 
         }
     }
 

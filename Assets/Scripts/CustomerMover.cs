@@ -37,7 +37,7 @@ public class CustomerMover : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(movePosition - customers[i].transform.position - new Vector3(0, 0, .01f));
             customers[i].transform.rotation = Quaternion.Slerp(customers[i].transform.rotation, targetRotation, Time.deltaTime * speed);
 
-            anim = customers[i].GetComponent<Animator>();
+            anim = customers[i].GetComponentInChildren<Animator>();
             if (customers[i].transform.position != movePosition)
             {
                 anim.SetBool("moving", true);
@@ -46,6 +46,15 @@ public class CustomerMover : MonoBehaviour
             {
                 anim.SetBool("moving", false);
             }
+        }
+    }
+
+    public void GiveMoney(bool boolean)
+    {
+        for (int i = 0; i < customers.Length; i++)
+        {
+            anim = customers[i].GetComponentInChildren<Animator>();
+            anim.SetBool("givemoney", boolean);
         }
     }
 }

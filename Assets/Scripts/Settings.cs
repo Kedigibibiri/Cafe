@@ -21,14 +21,14 @@ public class Settings : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("sound") == 1)
         {
-            PlayerPrefs.SetInt("sounds", 0);
+            PlayerPrefs.SetInt("sound", 0);
             soundOn.gameObject.SetActive(true);
             soundOff.gameObject.SetActive(false);
             return;
         }
         if (PlayerPrefs.GetInt("sound") == 0)
         {
-            PlayerPrefs.SetInt("sounds", 1);
+            PlayerPrefs.SetInt("sound", 1);
             soundOn.gameObject.SetActive(false);
             soundOff.gameObject.SetActive(true);
             return;
